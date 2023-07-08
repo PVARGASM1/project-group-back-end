@@ -1,22 +1,22 @@
 const express = require('express')
-const dataBase = require("@makeitrealcamp/db-mock")
+const cors = require('cors')
 
 const { 
-    handleCreateData, 
-    handleReadData,
-    handleReadDataById,
-    handleUpdateData,
-    handleDeleteData,
+	handleCreateData, 
+	handleReadData,
+	handleReadDataById,
+	handleUpdateData,
+	handleDeleteData,
 } = require('./controller')
-
 
 const app = express()
 const port = 3000
+app.use(cors())
 
 app.use(express.json())
 
 app.get('/',  (req, res) => {
- res.json('OK')
+	res.json('OK')
 })
 
 app.post('/data', handleCreateData)
@@ -35,5 +35,5 @@ app.put('/data/:id', handleUpdateData)
 app.delete('/data/:id', handleDeleteData )
 
 app.listen(port, () => {
-    console.log(`Successfully running at ${port}`)
+	console.log(`Successfully running at ${port}`)
 })
