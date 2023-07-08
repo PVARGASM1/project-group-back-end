@@ -36,4 +36,4 @@ app.delete('/data/:id', handleDeleteData )
 
 app.listen(port, () => {
     console.log(`Successfully running at ${port}`)
-  })
+})
