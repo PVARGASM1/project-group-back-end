@@ -23,7 +23,6 @@ app.get('/',  (req, res) => {
 app.post('/data', handleCreateData)
 
 app.get('/data', handleReadData) 
-
 // GET BY ID
 app.get('/data/:id', handleReadDataById)
 

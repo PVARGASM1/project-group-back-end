@@ -46,12 +46,12 @@ const handleUpdateData = (req, res) => {
         const { id } = req.params
         const { body } = req
 
-        const response = updateData(id, {...body})
+        const response = updateData(id, body)
 
         res.status(200).json({message: "User was updated", data: response})
     } 
     catch(error) {
-        res(400).json({mesagge: error.mesagge})
+        res.status(400).json({message: error.message})
     }
 }
 

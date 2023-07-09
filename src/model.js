@@ -18,7 +18,7 @@ const readDataById = (id) => {
 }
 
 const updateData = (id, data) => {
-    const user = dataBase.update({id, data})
+    const user = dataBase.update({id, ...data})
       return user
 }
 
