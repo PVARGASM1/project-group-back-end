@@ -53,10 +53,10 @@ const handleDeleteData =  (req, res) => {
 	try {
 		const id = req.params.id
 		const response = deleteData(id)
-		res.status(204).json({message: "User was deleted", data: response})
+		res.status(200).json({message: "User was deleted", data: response})
 	} 
 	catch(error) {
-		res.status(400).json({message: error.message})
+		res.status(404).json({message: error.message})
 	}
 }
 
